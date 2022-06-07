@@ -5,16 +5,16 @@
 """
 
 import random
-while(True):
-  user=int(input(""))
-  computer=random.randint(1,6)
-  print(computer)
-  if(user>computer):
-    print("User wins")
-    break
-  elif(user<computer):
-    print("Computer wins")
-    break
-  else:
-    print("Roll again")
-    pass
+def ucom():
+    user=int(input())
+    com=random.randrange(1,7)
+    print(com)
+    ans(user,com)
+def ans(user,com):
+    if(user==com):
+        ucom()
+    elif(user>com):
+        print("winner")
+    else:
+        print("looser")
+ucom()
