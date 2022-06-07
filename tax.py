@@ -5,16 +5,20 @@
     >1000000 --- 20% 
 """
 
-ai=int(input("Enter annual income"))
-hra=int(input("Enter house rent allowences"))
-deductions=int(input("Enter other deductions less than 80000"))
-taxableincome=ai-(hra*12)-deductions
-ta=taxableincome-300000
-if(ta<=300000):
-  print("No tax")
-elif(300000<ta<=600000):
-  print(0.1*ta)
-elif(600000<ta<=1000000):
-  print(0.15*ta)
+an=int(input("enter annual salary"))
+hra=12*int(input("enter hra per month"))
+other=int(input("enter the other expenses"))
+if(other>80000):
+    other=80000
+total=an-hra-other
+if(total<300000):
+    print("No tax")
+elif(300000<=total<=600000):
+    total=total-300000
+    print(0.1*total)
+elif(600000<=total<=1000000):
+    total=total-300000
+    print(0.15*total)
 else:
-  print(0.20*ta)
+    total=total-300000
+    print(0.2*total)
